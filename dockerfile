@@ -19,6 +19,13 @@ RUN apt-get update && \
     apt-get install -y libmagic-dev && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && \
+    apt-get install -y poppler-utils && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
+    apt-get install -y tesseract-ocr libxml2-dev libxslt-dev && \
+    rm -rf /var/lib/apt/lists/*
 RUN apt-get update
 RUN apt-get install -y libmagic-dev poppler-utils tesseract-ocr libreoffice pandoc
 RUN pip install tiktoken -q
